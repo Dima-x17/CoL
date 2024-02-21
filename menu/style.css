@@ -273,7 +273,7 @@ body {
 .container_daynight {
   width: 100%;
   display: flex;
-  margin-bottom: 100px;
+  margin-bottom: 30px;
   justify-content: end;
 }
 /* /////////////////////day/night////////////////////// */
