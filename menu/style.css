@@ -9,7 +9,7 @@ body {
   display: flex;
   height: 100%;
   width: 100%;
-  background-image: url(./photo/day.png);
+  background-image: url(./photo/phone1.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -21,7 +21,7 @@ body {
   display: flex;
   height: 100%;
   width: 100%;
-  background-image: url(./photo/night.png);
+  background-image: url(./photo/phone2.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
