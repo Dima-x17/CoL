@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <script src="./node.js"></script>
-    <link rel="stylesheet" href="style.css" />
+    <script src="./menu.js"></script>
+    <link rel="stylesheet" href="menu.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Code of Logic</title>
@@ -45,19 +45,46 @@
         type="audio/mpeg"
       ></audio>
       <div class="container_buttons">
-        <div class="button1_day" id="Button_1" onmouseover="Sound()">
+        <div
+          class="button1_day"
+          id="Button_1"
+          style="display: non"
+          onmouseover="Sound()"
+        >
           Single
         </div>
-        <div class="button2_day" id="Button_2" onmouseover="Sound1()">
+        <div
+          class="button2_day"
+          id="Button_2"
+          style="display: non"
+          onmouseover="Sound1()"
+        >
           Local
         </div>
-        <div class="button3_day" id="Button_3" onmouseover="Sound2()">
+        <div
+          class="button3_day"
+          id="Button_3"
+          style="display: non"
+          onmouseover="Sound2()"
+        >
           Customise
         </div>
-        <div class="button4_day" id="Button_4" onmouseover="Sound3()">
+        <div
+          class="button4_day"
+          id="Button_4"
+          style="display: non"
+          onmouseover="Sound3() "
+        >
           Settings
         </div>
+        <div class="container_sittings" style="display: none">
+          <div class="button_back"></div>
+          <div class="container_sound">
+            <img class="sound_photo" src="./photo/sound.png" />
+          </div>
+        </div>
       </div>
+
       <div class="container_beta">
         <div class="text_beta">Beta 1.0</div>
       </div>
