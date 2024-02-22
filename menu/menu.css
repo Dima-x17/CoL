@@ -33,7 +33,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(143, 143, 143);
+  background-color: rgb(9, 83, 47);
   border-radius: 15px;
   border: 3px solid black;
   width: 290px;
@@ -46,13 +46,13 @@ body {
     3px 3px 0 #000, -3px 0 0 #000, 3px 0 0 #000, 0 -3px 0 #000, 0 3px 0 #000;
 }
 .button1_day:hover {
-  background-color: rgb(92, 92, 92);
+  background-color: rgb(219, 193, 49);
 }
 .button2_day {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(140, 90, 255, 0.7);
+  background-color: rgb(9, 83, 47);
   border-radius: 15px;
   border: 3px solid black;
   width: 290px;
@@ -66,13 +66,13 @@ body {
     3px 3px 0 #000, -3px 0 0 #000, 3px 0 0 #000, 0 -3px 0 #000, 0 3px 0 #000;
 }
 .button2_day:hover {
-  background-color: rgb(140, 90, 255);
+  background-color: rgb(219, 193, 49);
 }
 .button3_day {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(140, 90, 255, 0.7);
+  background-color: rgb(9, 83, 47);
   border-radius: 15px;
   border: 3px solid black;
   width: 290px;
@@ -86,13 +86,13 @@ body {
     3px 3px 0 #000, -3px 0 0 #000, 3px 0 0 #000, 0 -3px 0 #000, 0 3px 0 #000;
 }
 .button3_day:hover {
-  background-color: rgb(140, 90, 255);
+  background-color: rgb(219, 193, 49);
 }
 .button4_day {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(140, 90, 255, 0.75);
+  background-color: rgb(9, 83, 47);
   border-radius: 15px;
   border: 3px solid black;
   width: 290px;
@@ -104,15 +104,16 @@ body {
   margin-top: 20px;
   text-shadow: -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000,
     3px 3px 0 #000, -3px 0 0 #000, 3px 0 0 #000, 0 -3px 0 #000, 0 3px 0 #000;
+  color: white;
 }
 .button4_day:hover {
-  background-color: rgb(97, 24, 255);
+  background-color: rgb(219, 193, 49);
 }
 .button1_night {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(0, 255, 51);
+  background-color: rgb(46, 46, 46);
   border-radius: 15px;
   border: 3px solid black;
   width: 290px;
@@ -125,13 +126,13 @@ body {
     3px 3px 0 #000, -3px 0 0 #000, 3px 0 0 #000, 0 -3px 0 #000, 0 3px 0 #000;
 }
 .button1_night:hover {
-  background-color: rgb(54, 0, 180);
+  background-color: rgb(102, 0, 255);
 }
 .button2_night {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(0, 255, 51);
+  background-color: rgb(46, 46, 46);
   border-radius: 15px;
   border: 3px solid black;
   width: 290px;
@@ -145,13 +146,13 @@ body {
     3px 3px 0 #000, -3px 0 0 #000, 3px 0 0 #000, 0 -3px 0 #000, 0 3px 0 #000;
 }
 .button2_night:hover {
-  background-color: rgb(140, 90, 255);
+  background-color: rgb(102, 0, 255);
 }
 .button3_night {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(0, 255, 51);
+  background-color: rgb(46, 46, 46);
   border-radius: 15px;
   border: 3px solid black;
   width: 290px;
@@ -165,13 +166,13 @@ body {
     3px 3px 0 #000, -3px 0 0 #000, 3px 0 0 #000, 0 -3px 0 #000, 0 3px 0 #000;
 }
 .button3_night:hover {
-  background-color: rgb(140, 90, 255);
+  background-color: rgb(102, 0, 255);
 }
 .button4_night {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(0, 255, 51);
+  background-color: rgb(46, 46, 46);
   border-radius: 15px;
   border: 3px solid black;
   width: 290px;
@@ -183,9 +184,11 @@ body {
   margin-top: 20px;
   text-shadow: -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000,
     3px 3px 0 #000, -3px 0 0 #000, 3px 0 0 #000, 0 -3px 0 #000, 0 3px 0 #000;
+  color: white;
+  text-decoration: none;
 }
-.button4_day:hover {
-  background-color: rgb(97, 24, 255);
+.button4_night:hover {
+  background-color: rgb(102, 0, 255);
 }
 .container_beta {
   display: flex;
@@ -530,4 +533,34 @@ body {
   animation-fill-mode: forwards;
 }
 
-/*////////////////////////////////////////////////////////////////////////*/
+.container_sittings {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  background-color: rgba(143, 143, 143);
+  border-radius: 15px;
+  border: 3px solid black;
+  width: 350px;
+  height: 500px;
+  border-bottom: 7px solid black;
+  font-size: 35px;
+  font-family: kavoon;
+  margin-top: 20px;
+}
+.container_sound {
+  display: flex;
+  margin-top: 30px;
+}
+.sound_photo {
+  width: 50px;
+  height: 50px;
+}
+.button_back {
+  width: 80px;
+  height: 45px;
+  background-color: #000;
+  margin-right: 245px;
+  margin-top: 15px;
+  border-radius: 10px;
+}
