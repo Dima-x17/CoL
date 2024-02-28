@@ -62,7 +62,7 @@
         <div class="button2_day" id="Button_2" onmouseover="Sound1()">
           Local
         </div>
-        <div class="button3_day" id="Button_3" onmouseover="Sound2()">
+        <div class="button3_day" id="Button_3" onmouseover="Sound2()" onclick="Customise(); Sound_enter()">
           Customise
         </div>
         <div
@@ -74,8 +74,18 @@
           Settings
         </div>
       </div>
+      <div class="container_none2">
+        <div class="container_customise_day" style="display: none;" id="Customise">
+          <div class="container_butback2">
+            <div class="button_back2" onclick="Settings_back(); Sound_back()">
+              <img src="./photo/button_back.png" />
+            </div>
+            <div class="text_customise">Customise</div>
+          </div>
+        </div>
+      </div>
       <div class="container_none">
-        <div class="container_sittings" style="display: none" id="Settings">
+        <div class="container_sittings_day" style="display: none" id="Settings">
           <div class="container_butback">
             <div class="button_back" onclick="Settings_back(); Sound_back()">
               <img src="./photo/button_back.png" />
@@ -88,23 +98,23 @@
             </div>
             <div class="zero_to_hundred">
               <div
-                class="block1"
+                class="block1_day"
                 style="
                   border-top-left-radius: 25px;
                   border-bottom-left-radius: 25px;
                   background-color: #1aba00;
                 "
               ></div>
-              <div class="block1" style="background-color: #00ea25"></div>
-              <div class="block1" style="background-color: #61ff00"></div>
-              <div class="block1" style="background-color: #adff00"></div>
-              <div class="block1" style="background-color: #faff00"></div>
-              <div class="block1" style="background-color: #ffe500"></div>
-              <div class="block1" style="background-color: #ffb800"></div>
-              <div class="block1" style="background-color: #ff7a00"></div>
-              <div class="block1" style="background-color: #ff3d00"></div>
+              <div class="block1_day" style="background-color: #00ea25"></div>
+              <div class="block1_day" style="background-color: #61ff00"></div>
+              <div class="block1_day" style="background-color: #adff00"></div>
+              <div class="block1_day" style="background-color: #faff00"></div>
+              <div class="block1_day" style="background-color: #ffe500"></div>
+              <div class="block1_day" style="background-color: #ffb800"></div>
+              <div class="block1_day" style="background-color: #ff7a00"></div>
+              <div class="block1_day" style="background-color: #ff3d00"></div>
               <div
-                class="block1"
+                class="block1_day"
                 style="
                   background-color: #ff0000;
                   border-top-right-radius: 25px;
