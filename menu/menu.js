@@ -147,3 +147,55 @@ function Sound3() {
   let audio = document.getElementById("Sound3");
   audio.play();
 }
+
+function Settings() {
+  let set = document.getElementById("Buttons");
+  let set_new = document.getElementById("Settings");
+  set.style.display = "none";
+  set_new.style.display = "flex";
+}
+function Settings_back() {
+  let back = document.getElementById("Settings");
+  let back_new = document.getElementById("Buttons");
+  back.style.display = "none";
+  back_new.style.display = "block";
+}
+function Sound_enter() {
+  let audio = document.getElementById("Sound_enter");
+  audio.play();
+}
+function Sound_back() {
+  let audio = document.getElementById("Sound_back");
+  audio.play();
+}
+
+/////////////////////SOUND//////////////
+
+document.addEventListener("DOMContentLoaded", function () {
+  let size = 42;
+  let circle = null;
+  let isDragging = false;
+  let offset = { x: 0 };
+
+  document.addEventListener("mousedown", function (event) {
+    if (event.target.id === "Circle") {
+      circle = event.target;
+      isDragging = true;
+      offset.x = event.clientX - circle.getBoundingClientRect().left;
+    }
+  });
+
+  document.addEventListener("mousemove", function (event) {
+    if (isDragging && circle) {
+      event.preventDefault();
+      let newX = Math.round((event.pageX - offset.x) / size) * size;
+      circle.style.transform = `translateX(${newX}px)`;
+    }
+  });
+
+  document.addEventListener("mouseup", function () {
+    isDragging = false;
+    offset.x = 0;
+    circle = null;
+  });
+});
