@@ -160,6 +160,20 @@ function Settings_back() {
   back.style.display = "none";
   back_new.style.display = "block";
 }
+
+function Customise() {
+  let set = document.getElementById("Buttons");
+  let set_new = document.getElementById("Customise");
+  set.style.display = "none";
+  set_new.style.display = "flex";
+}
+function Customise_back() {
+  let back = document.getElementById("Customise");
+  let back_new = document.getElementById("Buttons");
+  back.style.display = "none";
+  back_new.style.display = "block";
+}
+
 function Sound_enter() {
   let audio = document.getElementById("Sound_enter");
   audio.play();
