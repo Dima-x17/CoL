@@ -1,157 +1,710 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <script src="./menu.js"></script>
-    <link rel="stylesheet" href="menu.css" />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Code of Logic</title>
-  </head>
-  <body>
-    <div class="container_day" id="Photo_day">
-      <div class="container_daynight">
-        <div class="day" id="Day" onclick="Check()">
-          <div class="sun" id="Sun"></div>
-        </div>
-        <div class="cloud" id="Cloud" onclick="Check()"></div>
-        <div class="night" id="Night">
-          <div class="moon" id="Moon">
-            <div class="moon_sircle1"></div>
-            <div class="moon_sircle2"></div>
-            <div class="moon_sircle3"></div>
-          </div>
-          <div class="star star1"></div>
-          <div class="star star2"></div>
-          <div class="star star3"></div>
-          <div class="star star4"></div>
-          <div class="star star5"></div>
-          <div class="star star6"></div>
-        </div>
-      </div>
-      <audio id="Sound" src="./sounds/sound.mp3" type="audio/mpeg"></audio>
-      <audio
-        id="Sound1"
-        src="./sounds/sound copy.mp3"
-        type="audio/mpeg"
-      ></audio>
-      <audio
-        id="Sound2"
-        src="./sounds/sound copy 2.mp3"
-        type="audio/mpeg"
-      ></audio>
-      <audio
-        id="Sound3"
-        src="./sounds/sound copy 3.mp3"
-        type="audio/mpeg"
-      ></audio>
-      <audio
-        id="Sound_enter"
-        src="sounds/sound_enter.mp3"
-        type="audio/mpeg"
-      ></audio>
-      <audio
-        id="Sound_back"
-        src="sounds/sound_back.mp3"
-        type="audio/mpeg"
-      ></audio>
+body {
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  color: white;
+  user-select: none;
+}
+.container_day {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  background-image: url(./photo/phone1.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.container_night {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  background-image: url(./photo/phone2.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.button1_day {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(9, 83, 47);
+  border-radius: 15px;
+  border: 3px solid black;
+  width: 290px;
+  height: 70px;
+  font-size: 35px;
+  font-family: kavoon;
+  cursor: pointer;
+  border-bottom: 7px solid black;
+  text-shadow: -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000,
+    3px 3px 0 #000, -3px 0 0 #000, 3px 0 0 #000, 0 -3px 0 #000, 0 3px 0 #000;
+}
+.button1_day:hover {
+  background-color: rgb(219, 193, 49);
+}
+.button2_day {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(9, 83, 47);
+  border-radius: 15px;
+  border: 3px solid black;
+  width: 290px;
+  height: 70px;
+  font-size: 35px;
+  border-bottom: 7px solid black;
+  font-family: kavoon;
+  cursor: pointer;
+  margin-top: 20px;
+  text-shadow: -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000,
+    3px 3px 0 #000, -3px 0 0 #000, 3px 0 0 #000, 0 -3px 0 #000, 0 3px 0 #000;
+}
+.button2_day:hover {
+  background-color: rgb(219, 193, 49);
+}
+.button3_day {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(9, 83, 47);
+  border-radius: 15px;
+  border: 3px solid black;
+  width: 290px;
+  border-bottom: 7px solid black;
+  height: 70px;
+  font-size: 35px;
+  font-family: kavoon;
+  cursor: pointer;
+  margin-top: 20px;
+  text-shadow: -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000,
+    3px 3px 0 #000, -3px 0 0 #000, 3px 0 0 #000, 0 -3px 0 #000, 0 3px 0 #000;
+}
+.button3_day:hover {
+  background-color: rgb(219, 193, 49);
+}
+.button4_day {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(9, 83, 47);
+  border-radius: 15px;
+  border: 3px solid black;
+  width: 290px;
+  height: 70px;
+  font-size: 35px;
+  font-family: kavoon;
+  cursor: pointer;
+  border-bottom: 7px solid black;
+  margin-top: 20px;
+  text-shadow: -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000,
+    3px 3px 0 #000, -3px 0 0 #000, 3px 0 0 #000, 0 -3px 0 #000, 0 3px 0 #000;
+  color: white;
+}
+.button4_day:hover {
+  background-color: rgb(219, 193, 49);
+}
+.button1_night {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(46, 46, 46);
+  border-radius: 15px;
+  border: 3px solid black;
+  width: 290px;
+  height: 70px;
+  font-size: 35px;
+  font-family: kavoon;
+  cursor: pointer;
+  border-bottom: 7px solid black;
+  text-shadow: -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000,
+    3px 3px 0 #000, -3px 0 0 #000, 3px 0 0 #000, 0 -3px 0 #000, 0 3px 0 #000;
+}
+.button1_night:hover {
+  background-color: rgb(102, 0, 255);
+}
+.button2_night {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(46, 46, 46);
+  border-radius: 15px;
+  border: 3px solid black;
+  width: 290px;
+  height: 70px;
+  font-size: 35px;
+  border-bottom: 7px solid black;
+  font-family: kavoon;
+  cursor: pointer;
+  margin-top: 20px;
+  text-shadow: -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000,
+    3px 3px 0 #000, -3px 0 0 #000, 3px 0 0 #000, 0 -3px 0 #000, 0 3px 0 #000;
+}
+.button2_night:hover {
+  background-color: rgb(102, 0, 255);
+}
+.button3_night {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(46, 46, 46);
+  border-radius: 15px;
+  border: 3px solid black;
+  width: 290px;
+  border-bottom: 7px solid black;
+  height: 70px;
+  font-size: 35px;
+  font-family: kavoon;
+  cursor: pointer;
+  margin-top: 20px;
+  text-shadow: -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000,
+    3px 3px 0 #000, -3px 0 0 #000, 3px 0 0 #000, 0 -3px 0 #000, 0 3px 0 #000;
+}
+.button3_night:hover {
+  background-color: rgb(102, 0, 255);
+}
+.button4_night {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(46, 46, 46);
+  border-radius: 15px;
+  border: 3px solid black;
+  width: 290px;
+  height: 70px;
+  font-size: 35px;
+  font-family: kavoon;
+  cursor: pointer;
+  border-bottom: 7px solid black;
+  margin-top: 20px;
+  text-shadow: -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000,
+    3px 3px 0 #000, -3px 0 0 #000, 3px 0 0 #000, 0 -3px 0 #000, 0 3px 0 #000;
+  color: white;
+  text-decoration: none;
+}
+.button4_night:hover {
+  background-color: rgb(102, 0, 255);
+}
+.container_beta {
+  display: flex;
+  align-items: end;
+  margin-left: 5%;
+  width: 100%;
+  height: 20%;
+}
+.text_beta {
+  color: white;
+  font-size: 20px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000,
+    2px 2px 0 #000, -3px 0 0 #000, 3px 0 0 #000, 0 -3px 0 #000, 0 3px 0 #000;
+}
 
-      <div class="container_buttons" id="Buttons">
-        <div class="button1_day" id="Button_1" onmouseover="Sound()">
-          Single
-        </div>
-        <div class="button2_day" id="Button_2" onmouseover="Sound1()">
-          Local
-        </div>
-        <div class="button3_day" id="Button_3" onmouseover="Sound2()">
-          Customise
-        </div>
-        <div
-          class="button4_day"
-          id="Button_4"
-          onmouseover="Sound3()"
-          onclick="Settings(); Sound_enter()"
-        >
-          Settings
-        </div>
-      </div>
-      <div class="container_none">
-        <div class="container_sittings" style="display: none" id="Settings">
-          <div class="container_butback">
-            <div class="button_back" onclick="Settings_back(); Sound_back()">
-              <img src="./photo/button_back.png" />
-            </div>
-            <div class="text_settings">Settings</div>
-          </div>
-          <div class="container_sound">
-            <div class="sound_settings">
-              <img src="./photo/sound_set.png" />
-            </div>
-            <div class="zero_to_hundred">
-              <div
-                class="block1"
-                style="
-                  border-top-left-radius: 25px;
-                  border-bottom-left-radius: 25px;
-                  background-color: #1aba00;
-                "
-              ></div>
-              <div class="block1" style="background-color: #00ea25"></div>
-              <div class="block1" style="background-color: #61ff00"></div>
-              <div class="block1" style="background-color: #adff00"></div>
-              <div class="block1" style="background-color: #faff00"></div>
-              <div class="block1" style="background-color: #ffe500"></div>
-              <div class="block1" style="background-color: #ffb800"></div>
-              <div class="block1" style="background-color: #ff7a00"></div>
-              <div class="block1" style="background-color: #ff3d00"></div>
-              <div
-                class="block1"
-                style="
-                  background-color: #ff0000;
-                  border-top-right-radius: 25px;
-                  border-bottom-right-radius: 25px;
-                "
-              >
-                <div class="circle" id="Circle"></div>
-              </div>
-            </div>
-          </div>
-          <div class="managment">
-            <div class="for_code">
-              <div class="text_code">For code</div>
-              <div class="block_for_button">
-                <div class="button_words"></div>
-                <div class="text_lineup">Choose line up</div>
-              </div>
-              <div class="block_for_button">
-                <div class="button_words"></div>
-                <div class="text_lineup">Choose line L</div>
-              </div>
-              <div class="block_for_button">
-                <div class="button_words"></div>
-                <div class="text_lineup">Choose line down</div>
-              </div>
-              <div class="block_for_button">
-                <div class="button_words"></div>
-                <div class="text_lineup">Choose number R</div>
-              </div>
-            </div>
-            <div class="for_shooting">
-              <div class="text_shooting">For shooting</div>
-              <div class="block_for_button2">
-                <div class="button_words"></div>
-                <div class="text_lineup2">Shoot</div>
-              </div>
-              <div class="block_for_button2">
-                <div class="button_words"></div>
-                <div class="text_lineup2">Shoot enemy</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="container_beta">
-        <div class="text_beta">Beta 1.0</div>
-      </div>
-    </div>
-  </body>
-</html>
+/*?/////////////////////////////////daynight_button////////////////////////////////////////////////// */
+.day {
+  position: relative;
+  width: 100px;
+  height: 50px;
+  margin-left: 10px;
+  background-color: rgb(143, 231, 255);
+  border-radius: 35px;
+  border: 5px solid rgb(0, 143, 205);
+  cursor: pointer;
+  z-index: 1;
+}
+.sun {
+  position: relative;
+  width: 38px;
+  height: 38px;
+  background-color: rgb(255, 255, 0);
+  border-radius: 50%;
+  margin-left: 51px;
+  margin-top: 2px;
+  border: 4px solid rgb(229, 187, 0);
+}
+
+.cloud {
+  background-color: #fff;
+  background-image: -webkit-linear-gradient(
+    hsla(0, 0%, 0%, 0),
+    hsla(0, 0%, 0%, 0.1)
+  );
+  border-radius: 1em;
+  box-shadow: inset 0 0 0 1px hsla(0, 0%, 100%, 0.5);
+  display: inline-block;
+  height: 1em;
+  right: 66px;
+  top: 33px;
+  position: relative;
+  width: 40px;
+  cursor: pointer;
+  z-index: 1;
+}
+.cloud:after,
+.cloud:before {
+  background-color: #fff;
+  content: "";
+  border-radius: 100%;
+  position: absolute;
+}
+.cloud:after {
+  background-image: -webkit-linear-gradient(
+    hsla(0, 0%, 0%, 0) 50%,
+    hsla(0, 0%, 0%, 0.025)
+  );
+  height: 1em;
+  right: 0.4em;
+  top: -0.5em;
+  width: 1em;
+}
+.cloud:before {
+  background-image: -webkit-linear-gradient(
+    hsla(0, 0%, 0%, 0) 50%,
+    hsla(0, 0%, 0%, 0.075)
+  );
+  height: 1.6em;
+  left: 0.4em;
+  top: -0.75em;
+  width: 1.6em;
+}
+.container_daynight {
+  width: 100%;
+  display: flex;
+  margin-bottom: 30px;
+  justify-content: end;
+}
+/* /////////////////////day/night////////////////////// */
+
+@keyframes sun_anime {
+  0% {
+    transform: translate(0);
+    opacity: 1;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-48px);
+    opacity: 0;
+  }
+}
+.sun_anime {
+  animation: sun_anime 0.8s;
+  animation-fill-mode: forwards;
+}
+@keyframes cloud_anime {
+  0% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.cloud_anime {
+  animation: cloud_anime 0.8s;
+  animation-fill-mode: forwards;
+}
+@keyframes day_anime {
+  0% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.day_anime {
+  animation: day_anime 0.8s;
+  animation-fill-mode: forwards;
+}
+
+.night {
+  position: relative;
+  right: 150px;
+  width: 100px;
+  height: 50px;
+  background-color: rgb(48, 29, 110);
+  border-radius: 35px;
+  border: 5px solid rgb(0, 0, 0);
+  cursor: pointer;
+}
+.moon {
+  position: relative;
+  width: 38px;
+  height: 38px;
+  background-color: rgb(233, 233, 207);
+  border-radius: 50%;
+  top: 2px;
+  left: 53px;
+  border: 4px solid rgb(170, 167, 152);
+}
+.moon_sircle1 {
+  position: relative;
+  width: 7px;
+  height: 8px;
+  top: 5px;
+  background-color: rgb(223, 223, 197);
+  border: 4px solid rgb(170, 167, 152);
+  border-radius: 40px;
+}
+.moon_sircle2 {
+  position: relative;
+  width: 5px;
+  height: 4px;
+  top: 10px;
+  left: 17px;
+  background-color: rgb(223, 223, 197);
+  border: 4px solid rgb(170, 167, 152);
+  border-radius: 40px;
+}
+.moon_sircle3 {
+  position: relative;
+  width: 1px;
+  height: 1px;
+  left: 28px;
+  bottom: 20px;
+  background-color: rgb(223, 223, 197);
+  border: 4px solid rgb(170, 167, 152);
+  border-radius: 40px;
+}
+.star {
+  position: relative;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: white;
+}
+.star.star1 {
+  bottom: 7px;
+  left: 50px;
+}
+.star.star2 {
+  bottom: 45px;
+  left: 55px;
+  width: 4px;
+  height: 4px;
+}
+.star.star3 {
+  bottom: 43px;
+  left: 73px;
+  width: 3px;
+  height: 3px;
+}
+.star.star4 {
+  bottom: 24px;
+  left: 80px;
+  width: 5px;
+  height: 5px;
+}
+.star.star5 {
+  bottom: 55px;
+  left: 86px;
+  width: 3px;
+  height: 3px;
+}
+.star.star6 {
+  bottom: 43px;
+  left: 57px;
+  width: 3px;
+  height: 3px;
+}
+@keyframes night_anime {
+  0% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.night_anime {
+  animation: night_anime 0.8s;
+  animation-fill-mode: forwards;
+}
+@keyframes moon_anime {
+  0% {
+    transform: translate(0);
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50px);
+    opacity: 1;
+  }
+}
+.moon_anime {
+  animation: moon_anime 0.8s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes moon_anime_reverse {
+  0% {
+    transform: translate(-50px);
+    opacity: 1;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    transform: translate(0);
+    opacity: 0;
+  }
+}
+.moon_anime_reverse {
+  animation: moon_anime_reverse 0.8s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes night_anime_reverse {
+  0% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.night_anime_reverse {
+  animation: night_anime_reverse 0.8s;
+  animation-fill-mode: forwards;
+}
+@keyframes sun_anime_reverse {
+  0% {
+    transform: translate(-50px);
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(0);
+    opacity: 1;
+  }
+}
+.sun_anime_reverse {
+  animation: sun_anime_reverse 0.8s;
+  animation-fill-mode: forwards;
+}
+@keyframes cloud_anime_reverse {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.cloud_anime_reverse {
+  animation: cloud_anime_reverse 0.8s;
+  animation-fill-mode: forwards;
+}
+@keyframes day_anime_reverse {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.day_anime_reverse {
+  animation: day_anime_reverse 0.8s;
+  animation-fill-mode: forwards;
+}
+/* це загальний клас для всього що є в налаштуваннях */
+.container_sittings {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  background-color: #7c7c7c;
+  border-radius: 15px;
+  border: 4px solid black;
+  width: 586px;
+  height: 460px;
+  border-bottom: 7px solid black;
+  font-size: 35px;
+  font-family: kavoon;
+}
+
+/* Цей клас для кнопки назад і тексту */
+.container_butback {
+  display: flex;
+  justify-content: left;
+  flex-direction: row;
+  margin-bottom: -5px;
+}
+
+.button_back {
+  display: flex;
+  width: 55px;
+  height: 47px;
+  margin-left: -60%;
+  margin-top: 5%;
+  cursor: pointer;
+}
+
+.text_settings {
+  display: flex;
+  margin-left: 55%;
+  margin-top: 3%;
+  color: white;
+  font-size: 50px;
+  font-family: Kavoon;
+  text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000,
+    2px 2px 0 #000, -3px 0 0 #000, 3px 0 0 #000, 0 -3px 0 #000, 0 3px 0 #000;
+}
+/* цей для налаштування звуку */
+.container_sound {
+  display: flex;
+  flex-direction: row;
+}
+
+.sound_settings {
+  display: flex;
+  width: 30px;
+  height: 45px;
+  margin-left: -5%;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+.zero_to_hundred {
+  display: flex;
+  flex-direction: row;
+  margin-left: 12%;
+}
+
+.block1 {
+  width: 38px;
+  height: 18px;
+  border: 2px solid black;
+  background-color: #00ea25;
+  margin-top: 4.3%;
+}
+
+.circle {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  border: 3px solid black;
+  border-radius: 50%;
+  background-color: #fff;
+  margin-top: -20%;
+  margin-left: -1040%;
+  cursor: pointer;
+}
+
+/* для кнопок */
+.managment {
+  display: flex;
+  flex-direction: row;
+  margin-top: 5%;
+}
+/* для половини та що зліва */
+.for_code {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5%;
+}
+
+.text_code {
+  margin-bottom: 20px;
+  color: white;
+  font-size: 25px;
+  font-family: Kavoon;
+  text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000,
+    2px 2px 0 #000, -3px 0 0 #000, 3px 0 0 #000, 0 -3px 0 #000, 0 3px 0 #000;
+  margin-left: -35%;
+}
+/* для того щоб поєдати кнопку з текстом */
+.block_for_button {
+  display: flex;
+  text-align: center;
+  margin-left: -40%;
+}
+/*  сама кнопка */
+.button_words {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 45px;
+  height: 45px;
+  border: 3px solid black;
+  border-radius: 16px;
+  background-color: #fff;
+  margin: 2%;
+}
+/* текст для всього */
+.text_lineup {
+  margin-top: 6%;
+  color: white;
+  font-size: 20px;
+  line-height: 28.58px;
+  font-weight: 400px;
+  font-family: Kavoon;
+  text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000,
+    2px 2px 0 #000, -3px 0 0 #000, 3px 0 0 #000, 0 -3px 0 #000, 0 3px 0 #000;
+  white-space: nowrap;
+  text-align: center;
+}
+/* для другої половини що з права */
+.for_shooting {
+  color: white;
+  font-size: 25px;
+  font-family: Kavoon;
+  text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000,
+    2px 2px 0 #000, -3px 0 0 #000, 3px 0 0 #000, 0 -3px 0 #000, 0 3px 0 #000;
+  margin-left: 17%;
+}
+
+.text_shooting {
+  margin-bottom: 20px;
+  color: white;
+  font-size: 25px;
+  font-family: Kavoon;
+  text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000,
+    2px 2px 0 #000, -3px 0 0 #000, 3px 0 0 #000, 0 -3px 0 #000, 0 3px 0 #000;
+  margin-left: -15%;
+}
+
+.text_lineup2 {
+  margin-left: 2%;
+  margin-top: 7%;
+  color: white;
+  font-size: 20px;
+  line-height: 28.58px;
+  font-weight: 400px;
+  font-family: Kavoon;
+  text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000,
+    2px 2px 0 #000, -3px 0 0 #000, 3px 0 0 #000, 0 -3px 0 #000, 0 3px 0 #000;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.block_for_button2 {
+  display: flex;
+  margin-left: -20%;
+}
