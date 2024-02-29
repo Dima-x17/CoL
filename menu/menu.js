@@ -114,6 +114,8 @@ function Check() {
     Button2_day("Button_2");
     Button3_day("Button_3");
     Button4_day("Button_4");
+    Settings_night("Settings");
+    Colors_night("Color");
   } else {
     Moon_reverse("Moon");
     Night_reverse("Night");
@@ -125,6 +127,8 @@ function Check() {
     Button2_night("Button_2");
     Button3_night("Button_3");
     Button4_night("Button_4");
+    Settings_day("Settings");
+    Colors_day("Color");
   }
   isTrue = !isTrue;
 }
@@ -160,20 +164,6 @@ function Settings_back() {
   back.style.display = "none";
   back_new.style.display = "block";
 }
-
-function Customise() {
-  let set = document.getElementById("Buttons");
-  let set_new = document.getElementById("Customise");
-  set.style.display = "none";
-  set_new.style.display = "flex";
-}
-function Customise_back() {
-  let back = document.getElementById("Customise");
-  let back_new = document.getElementById("Buttons");
-  back.style.display = "none";
-  back_new.style.display = "block";
-}
-
 function Sound_enter() {
   let audio = document.getElementById("Sound_enter");
   audio.play();
@@ -202,7 +192,10 @@ document.addEventListener("DOMContentLoaded", function () {
   document.addEventListener("mousemove", function (event) {
     if (isDragging && circle) {
       event.preventDefault();
-      let newX = Math.round((event.pageX - offset.x) / size) * size;
+      let newX = Math.min(
+        420,
+        Math.max(0, Math.round((event.pageX - offset.x) / size) * size)
+      );
       circle.style.transform = `translateX(${newX}px)`;
     }
   });
@@ -213,3 +206,56 @@ document.addEventListener("DOMContentLoaded", function () {
     circle = null;
   });
 });
+///////////////////Бордер налаштувань////////////////////////////
+
+function Settings_day() {
+  let set = document.getElementById("Settings");
+  set.classList.remove("container_sittings_night");
+  set.classList.add("container_sittings_day");
+}
+function Settings_night() {
+  let set = document.getElementById("Settings");
+  set.classList.remove("container_sittings_day");
+  set.classList.add("container_sittings_night");
+}
+
+///////Кольори звуку///////////////
+
+let colors_night = [
+  "#E2BDFF",
+  "#D7A6FE",
+  "#CC8BFF",
+  "#BE6AFF",
+  "#B04BFF",
+  "#A028FF",
+  "#9311F9",
+  "#8300EA",
+  "#7300CE",
+  "#6700B7",
+];
+function Colors_night() {
+  let elements = document.getElementsByClassName("block1_day");
+  for (let i = 0; i < elements.length; i++) {
+    elements[i].style.backgroundColor = colors_night[i];
+  }
+}
+
+let colors_day = [
+  "#1aba00",
+  "#00ea25",
+  "#61ff00",
+  "#adff00",
+  "#faff00",
+  "#ffe500",
+  "#ffb800",
+  "#ff7a00",
+  "#ff3d00",
+  "#ff0000",
+];
+
+function Colors_day() {
+  let elements = document.getElementsByClassName("block1_day");
+  for (let i = 0; i < elements.length; i++) {
+    elements[i].style.backgroundColor = colors_day[i];
+  }
+}
