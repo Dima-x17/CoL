@@ -56,17 +56,18 @@
       ></audio>
 
       <div class="container_buttons" id="Buttons">
-        <div class="button1_day" id="Button_1" onmouseover="Sound()">
+        <div class="button1_day" style="display: none;" id="Button_1" onmouseover="Sound()">
           Single
         </div>
-        <div class="button2_day" id="Button_2" onmouseover="Sound1()">
+        <div class="button2_day" style="display: none;"  id="Button_2" onmouseover="Sound1()">
           Local
         </div>
-        <div class="button3_day" id="Button_3" onmouseover="Sound2()" onclick="Customise(); Sound_enter()">
+        <div class="button3_day" style="display: none;"  id="Button_3" onmouseover="Sound2()">
           Customise
         </div>
         <div
           class="button4_day"
+          style="display: none;"
           id="Button_4"
           onmouseover="Sound3()"
           onclick="Settings(); Sound_enter()"
@@ -75,17 +76,45 @@
         </div>
       </div>
       <div class="container_none2">
-        <div class="container_customise_day" style="display: none;" id="Customise">
+        <div class="container_customise_day" id="Customise">
           <div class="container_butback2">
             <div class="button_back2" onclick="Settings_back(); Sound_back()">
               <img src="./photo/button_back.png" />
             </div>
             <div class="text_customise">Customise</div>
           </div>
+          <div class="text_for_body">
+            Choose body
+          </div>
+          <div class="bady">
+            <div class="button_customise_1">
+              <img src="./photo/button_for_custom2.png">
+            </div>
+            <div class="skin">
+              <img src="./photo/Skin1.png">
+            </div>
+            <div class="button_customise_2">
+              <img src="./photo/button_for_custom .png">
+            </div>
+          </div>
+          <div class="text_for_gun">
+            Choose gun
+          </div>
+          <div class="guns">
+            <div class="button_customise_3">
+              <img src="./photo/button_for_custom2.png">
+            </div>
+            <div class="photo_gun">
+              <img src="./photo/gun1.png">
+            </div>
+            <div class="button_customise_4">
+              <img src="./photo/button_for_custom .png">
+            </div>
+          </div>
         </div>
       </div>
       <div class="container_none">
-        <div class="container_sittings_day" style="display: none" id="Settings">
+        <div class="container_sittings" style="display: none" id="Settings">
           <div class="container_butback">
             <div class="button_back" onclick="Settings_back(); Sound_back()">
               <img src="./photo/button_back.png" />
@@ -105,14 +134,46 @@
                   background-color: #1aba00;
                 "
               ></div>
-              <div class="block1_day" style="background-color: #00ea25"></div>
-              <div class="block1_day" style="background-color: #61ff00"></div>
-              <div class="block1_day" style="background-color: #adff00"></div>
-              <div class="block1_day" style="background-color: #faff00"></div>
-              <div class="block1_day" style="background-color: #ffe500"></div>
-              <div class="block1_day" style="background-color: #ffb800"></div>
-              <div class="block1_day" style="background-color: #ff7a00"></div>
-              <div class="block1_day" style="background-color: #ff3d00"></div>
+              <div
+                class="block1_day"
+                id="Color"
+                style="background-color: #00ea25"
+              ></div>
+              <div
+                class="block1_day"
+                id="Color"
+                style="background-color: #61ff00"
+              ></div>
+              <div
+                class="block1_day"
+                id="Color"
+                style="background-color: #adff00"
+              ></div>
+              <div
+                class="block1_day"
+                id="Color"
+                style="background-color: #faff00"
+              ></div>
+              <div
+                class="block1_day"
+                id="Color"
+                style="background-color: #ffe500"
+              ></div>
+              <div
+                class="block1_day"
+                id="Color"
+                style="background-color: #ffb800"
+              ></div>
+              <div
+                class="block1_day"
+                id="Color"
+                style="background-color: #ff7a00"
+              ></div>
+              <div
+                class="block1_day"
+                id="Color"
+                style="background-color: #ff3d00"
+              ></div>
               <div
                 class="block1_day"
                 style="
