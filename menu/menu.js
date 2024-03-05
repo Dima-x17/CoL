@@ -116,6 +116,7 @@ function Check() {
     Button4_day("Button_4");
     Settings_night("Settings");
     Colors_night("Color");
+    Customise_night("Customise");
   } else {
     Moon_reverse("Moon");
     Night_reverse("Night");
@@ -129,6 +130,7 @@ function Check() {
     Button4_night("Button_4");
     Settings_day("Settings");
     Colors_day("Color");
+    Customise_day("Customise");
   }
   isTrue = !isTrue;
 }
@@ -164,6 +166,13 @@ function Settings_back() {
   back.style.display = "none";
   back_new.style.display = "block";
 }
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape") {
+    Settings_back();
+    Sound_back();
+    Customise_back();
+  }
+});
 function Sound_enter() {
   let audio = document.getElementById("Sound_enter");
   audio.play();
@@ -176,36 +185,93 @@ function Sound_back() {
 /////////////////////SOUND//////////////
 
 document.addEventListener("DOMContentLoaded", function () {
-  let size = 42;
-  let circle = null;
+  let circle = document.getElementById("Circle");
   let isDragging = false;
-  let offset = { x: 0 };
 
-  document.addEventListener("mousedown", function (event) {
-    if (event.target.id === "Circle") {
-      circle = event.target;
-      isDragging = true;
-      offset.x = event.clientX - circle.getBoundingClientRect().left;
-    }
+  let startPositionX;
+  let currentPositionX;
+
+  circle.addEventListener("mousedown", function (event) {
+    isDragging = true;
+    startPositionX = event.clientX;
+    currentPositionX = parseInt(circle.style.left) || 0;
   });
 
   document.addEventListener("mousemove", function (event) {
-    if (isDragging && circle) {
-      event.preventDefault();
-      let newX = Math.min(
-        420,
-        Math.max(0, Math.round((event.pageX - offset.x) / size) * size)
-      );
-      circle.style.transform = `translateX(${newX}px)`;
+    if (isDragging) {
+      let diffX = event.clientX - startPositionX;
+      let steps = Math.round(diffX / 42);
+      let newX = Math.min(420, Math.max(0, currentPositionX + steps * 42));
+      circle.style.left = newX + "px";
+
+      let sound_1 = document.getElementById("Set_1_on");
+      let sound_2 = document.getElementById("Set_2_on");
+      let sound_3 = document.getElementById("Set_3_on");
+      let sound_4 = document.getElementById("Set_4_on");
+
+      let sound_1_off = document.getElementById("Set_1_off");
+      let sound_2_off = document.getElementById("Set_2_off");
+      let sound_3_off = document.getElementById("Set_3_off");
+      let sound_4_off = document.getElementById("Set_4_off");
+
+      if (
+        sound_1.style.display === "none" &&
+        sound_2.style.display === "none" &&
+        sound_3.style.display === "none" &&
+        sound_4.style.display === "none"
+      ) {
+        if (newX === 0) {
+          sound_1_off.style.display = "flex";
+          sound_2_off.style.display = "none";
+          sound_3_off.style.display = "none";
+          sound_4_off.style.display = "none";
+        } else if (42 <= newX && newX <= 126) {
+          sound_1_off.style.display = "none";
+          sound_2_off.style.display = "flex";
+          sound_3_off.style.display = "none";
+          sound_4_off.style.display = "none";
+        } else if (168 <= newX && newX <= 294) {
+          sound_1_off.style.display = "none";
+          sound_2_off.style.display = "none";
+          sound_3_off.style.display = "flex";
+          sound_4_off.style.display = "none";
+        } else if (336 <= newX && newX <= 420) {
+          sound_1_off.style.display = "none";
+          sound_2_off.style.display = "none";
+          sound_3_off.style.display = "none";
+          sound_4_off.style.display = "flex";
+        }
+      } else {
+        if (newX === 0) {
+          sound_1.style.display = "flex";
+          sound_2.style.display = "none";
+          sound_3.style.display = "none";
+          sound_4.style.display = "none";
+        } else if (42 <= newX && newX <= 126) {
+          sound_1.style.display = "none";
+          sound_2.style.display = "flex";
+          sound_3.style.display = "none";
+          sound_4.style.display = "none";
+        } else if (168 <= newX && newX <= 294) {
+          sound_1.style.display = "none";
+          sound_2.style.display = "none";
+          sound_3.style.display = "flex";
+          sound_4.style.display = "none";
+        } else if (336 <= newX && newX <= 420) {
+          sound_1.style.display = "none";
+          sound_2.style.display = "none";
+          sound_3.style.display = "none";
+          sound_4.style.display = "flex";
+        }
+      }
     }
   });
 
   document.addEventListener("mouseup", function () {
     isDragging = false;
-    offset.x = 0;
-    circle = null;
   });
 });
+
 ///////////////////Бордер налаштувань////////////////////////////
 
 function Settings_day() {
@@ -241,15 +307,15 @@ function Colors_night() {
 }
 
 let colors_day = [
-  "#1aba00",
-  "#00ea25",
-  "#61ff00",
-  "#adff00",
-  "#faff00",
-  "#ffe500",
-  "#ffb800",
-  "#ff7a00",
-  "#ff3d00",
+  "#22ff00",
+  "#95ff00",
+  "#b7ff00",
+  "#d4ff00",
+  "#eaff00",
+  "#ffbf00",
+  "#ff9500",
+  "#ff6f00",
+  "#ff4800",
   "#ff0000",
 ];
 
@@ -258,4 +324,76 @@ function Colors_day() {
   for (let i = 0; i < elements.length; i++) {
     elements[i].style.backgroundColor = colors_day[i];
   }
+}
+
+function Set_1_on() {
+  let set = document.getElementById("Set_1_off");
+  let new_set = document.getElementById("Set_1_on");
+  set.style.display = "none";
+  new_set.style.display = "flex";
+}
+function Set_1_off() {
+  let set = document.getElementById("Set_1_off");
+  let new_set = document.getElementById("Set_1_on");
+  new_set.style.display = "none";
+  set.style.display = "flex";
+}
+function Set_2_on() {
+  let set = document.getElementById("Set_2_off");
+  let new_set = document.getElementById("Set_2_on");
+  set.style.display = "none";
+  new_set.style.display = "flex";
+}
+function Set_2_off() {
+  let set = document.getElementById("Set_2_off");
+  let new_set = document.getElementById("Set_2_on");
+  new_set.style.display = "none";
+  set.style.display = "flex";
+}
+function Set_3_on() {
+  let set = document.getElementById("Set_3_off");
+  let new_set = document.getElementById("Set_3_on");
+  set.style.display = "none";
+  new_set.style.display = "flex";
+}
+function Set_3_off() {
+  let set = document.getElementById("Set_3_off");
+  let new_set = document.getElementById("Set_3_on");
+  new_set.style.display = "none";
+  set.style.display = "flex";
+}
+function Set_4_on() {
+  let set = document.getElementById("Set_4_off");
+  let new_set = document.getElementById("Set_4_on");
+  set.style.display = "none";
+  new_set.style.display = "flex";
+}
+function Set_4_off() {
+  let set = document.getElementById("Set_4_off");
+  let new_set = document.getElementById("Set_4_on");
+  new_set.style.display = "none";
+  set.style.display = "flex";
+}
+
+function Customise() {
+  let cust = document.getElementById("Customise");
+  let but = document.getElementById("Buttons");
+  cust.style.display = "flex";
+  but.style.display = "none";
+}
+function Customise_back() {
+  let cust = document.getElementById("Customise");
+  let but = document.getElementById("Buttons");
+  cust.style.display = "none";
+  but.style.display = "block";
+}
+function Customise_day() {
+  let day = document.getElementById("Customise");
+  day.classList.remove("container_customise_night");
+  day.classList.add("container_customise_day");
+}
+function Customise_night() {
+  let day = document.getElementById("Customise");
+  day.classList.remove("container_customise_day");
+  day.classList.add("container_customise_night");
 }
